@@ -88,7 +88,9 @@ $(document).ready(function () {
   };
 
   let nombreCambiar = document.getElementById("nombreCambiar");
-  let divImg = document.querySelector(".col > div:nth-child(1) > div:nth-child(1)");
+  let divImg = document.querySelector(
+    ".col > div:nth-child(1) > div:nth-child(1)"
+  );
   let spinnerBusqueda = document.getElementById("spinnerBusqueda");
 
   let vidaCambiar = document.getElementById("vidaCambiar");
@@ -121,8 +123,9 @@ $(document).ready(function () {
     const velocidad = pokemon.habilidades.velocidad;
 
     nombreCambiar.innerText = pokemon.nombre;
-    
-    divImg.innerHTML = '<img id="imgCambiar" src="" width="100%" height="225" alt="">';
+
+    divImg.innerHTML =
+      '<img id="imgCambiar" src="" width="100%" height="225" alt="">';
     let imgCambiar = document.getElementById("imgCambiar");
     imgCambiar.src = pokemon.imagen;
     imgCambiar.alt = pokemon.nombre;
@@ -141,6 +144,14 @@ $(document).ready(function () {
       buscarPokemon(nombrePokemon);
     }
   });
+
+  let btnBusqueda = document.getElementById("btn-busqueda");
+  btnBusqueda.addEventListener("click", (e) => {
+    e.preventDefault();
+    let valor = $("#buscar-pokemon").val();
+    buscarPokemon(valor);
+  });
+
 
   ////////////////////////////////////////
 

@@ -83,7 +83,7 @@ $(document).ready(function () {
   };
 
   inputPokemon.oninput = function (e) {
-    valorInput = e.target.value.trim();
+    valorInput = e.target.value.trim().toLowerCase();
     cantTotalPokemon(valorInput);
   };
 
@@ -148,7 +148,7 @@ $(document).ready(function () {
   let btnBusqueda = document.getElementById("btn-busqueda");
   btnBusqueda.addEventListener("click", (e) => {
     e.preventDefault();
-    let valor = $("#buscar-pokemon").val();
+    let valor = $("#buscar-pokemon").val().toLowerCase();
     buscarPokemon(valor);
   });
 
